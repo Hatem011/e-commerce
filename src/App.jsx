@@ -1,4 +1,4 @@
-import { Navigate, RouterProvider, createBrowserRouter, useNavigate } from 'react-router-dom';
+import { Navigate, RouterProvider, createBrowserRouter, createHashRouter, useNavigate } from 'react-router-dom';
 import Products from './Components/Products/Products';
 import HomePage from './Pages/HomePage';
 import MainLayout from './Layouts/MainLayout';
@@ -47,7 +47,7 @@ function logout()
    
   }, [])
   
-  let routes=createBrowserRouter([{
+  let routes=createHashRouter([{
     path:'',element:<MainLayout userData={userData} logout={logout}/>,
     children:[
       { index:true,element:<ProtectedRoutes><HomePage/> </ProtectedRoutes> },
