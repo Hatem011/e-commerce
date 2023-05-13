@@ -1,4 +1,4 @@
-import { Navigate, RouterProvider, createBrowserRouter, createHashRouter, useNavigate } from 'react-router-dom';
+import { Navigate, RouterProvider, createHashRouter } from 'react-router-dom';
 import Products from './Components/Products/Products';
 import HomePage from './Pages/HomePage';
 import MainLayout from './Layouts/MainLayout';
