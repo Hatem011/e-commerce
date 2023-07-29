@@ -26,7 +26,7 @@ newPassword:Yup.string().matches(/^[A-Z][a-z0-9@#$]{5,}$/,"password must match t
     )
    async function reassword(values){
     setLoading(true)
-  let {data}=await axios.put('https://route-ecommerce-app.vercel.app/api/v1/auth/resetPassword',values)
+  let {data}=await axios.put('https://ecommerce.routemisr.com/api/v1/auth/resetPassword',values)
   console.log(data);
   if(data.token){
     setLoading(false)

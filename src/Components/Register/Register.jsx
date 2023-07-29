@@ -26,7 +26,7 @@ rePassword:Yup.string().oneOf([Yup.ref('password')],"password and repassword not
             onSubmit:(values)=>{
               setLoading(true)
 console.log(values);
-axios.post(`https://route-ecommerce-app.vercel.app/api/v1/auth/signup`,values).then((data)=>{
+axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`,values).then((data)=>{
 if(data.status===201){
   // localStorage.setItem("token",data.data.token)
   notify("Success","success")

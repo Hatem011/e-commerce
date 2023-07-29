@@ -7,7 +7,7 @@ export default function Brands() {
 
   async function getAllBrands()
   {
-    let {data}=await axios.get(`https://route-ecommerce-app.vercel.app/api/v1/brands`)
+    let {data}=await axios.get(`https://ecommerce.routemisr.com/api/v1/brands`)
     console.log(data.data);
     setBrands(data.data)
   }

@@ -10,7 +10,7 @@ export default function StoreContextProvider(props)
     // get Categories fun
     async function getAllCategories()
     {
-        let {data}=await axios.get(`https://route-ecommerce-app.vercel.app/api/v1/categories`)
+        let {data}=await axios.get(`https://ecommerce.routemisr.com/api/v1/categories`)
         setCategoryList(data.data)
     }
     useEffect(() => {
@@ -19,28 +19,28 @@ export default function StoreContextProvider(props)
 
 // add to cart fun
     function addTOCart(token,productId){
-return axios.post('https://route-ecommerce-app.vercel.app/api/v1/cart',{productId},{headers:{token}})
+return axios.post('https://ecommerce.routemisr.com/api/v1/cart',{productId},{headers:{token}})
 .then(data=>data)
 .catch(error=>error)
     }
     // get cards fun
     function getUserCart(token){
-return axios.get('https://route-ecommerce-app.vercel.app/api/v1/cart',{headers:{token}})
+return axios.get('https://ecommerce.routemisr.com/api/v1/cart',{headers:{token}})
 .then(data=>data)
 .catch(error=>error)
     }
     function deleteCart(token,productId){
-return axios.delete(`https://route-ecommerce-app.vercel.app/api/v1/cart/${productId}`,{headers:{token}})
+return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,{headers:{token}})
 .then(data=>data)
 .catch(error=>error)
     }
     function updateQty(token,productId,count){
-return axios.put(`https://route-ecommerce-app.vercel.app/api/v1/cart/${productId}`,{count},{headers:{token}})
+return axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,{count},{headers:{token}})
 .then(data=>data)
 .catch(error=>error)
     }
     function getCartCount(token){
-         axios.get('https://route-ecommerce-app.vercel.app/api/v1/cart',{headers:{token}})
+         axios.get('https://ecommerce.routemisr.com/api/v1/cart',{headers:{token}})
         .then(data=>{setCount(data.data.numOfCartItems)})
         .catch(error=>{
             console.log(error);

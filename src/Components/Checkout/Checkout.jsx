@@ -23,7 +23,7 @@ Checkout(values,cartId)
     token:localStorage.getItem('token')
     }
     console.log(body);
-    let {data}=await axios.post(`https://route-ecommerce.onrender.com/api/v1/orders/checkout-session/${id}?url=http://localhost:3000`,body,{headers})
+    let {data}=await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=http://localhost:3000`,body,{headers})
     if(data.status==='success'){
       window.open(data.session.url,"_self")
     }
