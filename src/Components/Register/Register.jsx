@@ -11,7 +11,7 @@ export default function Register () {
     const validationSchema = Yup.object({
 name:Yup.string().min(3).max(15).required(),
 email:Yup.string().email().required(),
-password:Yup.string().matches(/^[A-Z][a-z0-9@#$]{5,}$/,"password must match the pattern").required(),
+password:Yup.string().matches(/^[A-Z][a-z0-9@#$]{5,}$/,"password must start with 1uppercase and must be at least 6 characters").required(),
 rePassword:Yup.string().oneOf([Yup.ref('password')],"password and repassword not match").required()
     })
     let registerFormik=useFormik(

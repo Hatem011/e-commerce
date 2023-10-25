@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext'
 import { toast } from 'react-toastify'
 import Slider from 'react-slick'
+import { Helmet } from 'react-helmet'
 export default function () {
     const [isLoading, setisLoading] = useState(false)
     const [loader, setLoader] = useState(false)
@@ -53,6 +54,10 @@ export default function () {
     }, [])
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Product Details</title>
+            </Helmet>
 <div className="container">
 
     {isLoading?

@@ -19,10 +19,10 @@ export default function Footer() {
                 <li className='text-primary me-2'><i class="fa-brands fa-cc-mastercard"></i></li>
             </ul>
         </div>
-        <div className="rightPart d-flex flex-wrap align-items-center">
-<h6>Get Deliveries with Freshcard</h6>
-<button className='btn btn-dark mx-2'>Available on Store App</button>
-<button className='btn btn-dark'>Get it from Google Play</button>
+ <div className="rightPart d-flex flex-wrap align-items-center">
+<h6 className='pe-1'>Get Deliveries with Freshcard</h6>
+<button className='btn btn-dark me-1'>Available on Store App</button>
+<button className='btn btn-dark me-1'>Get it from Google Play</button>
         </div>
         </div>
     </div>

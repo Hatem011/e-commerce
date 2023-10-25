@@ -11,6 +11,7 @@
 
 body{
     font-family: var(--font-family) !important;
+    background-image: url("../src/images/light-patten.svg");
 }
 .rating-color
 {
@@ -33,7 +34,10 @@ a , a:hover{
     transition: all 1s , all 1s;
     transform: translateY(100%);
     opacity: 0;
-   
+    -webkit-transition: all 1s , all 1s;
+    -moz-transition: all 1s , all 1s;
+    -ms-transition: all 1s , all 1s;
+    -o-transition: all 1s , all 1s;
 }
 .product:hover .btn 
 {
@@ -56,4 +60,12 @@ a , a:hover{
 .bg-main-light 
 {
     background-color: var(--light-color) !important;
+}
+.network-Status{
+    position: fixed;
+    bottom: 1rem;
+    right: 1 rem;
+    background-color: wheat;
+    color: var(--main-color);
+   padding: 2rem;
 }

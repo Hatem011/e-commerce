@@ -4,21 +4,12 @@ import "./CategorySlider.css"
 import { StoreContext } from '../../Context/StoreContext';
 export default function CategorySlider() {
   let {categoryList}=useContext(StoreContext)
-    // const [categories, setCategories] = useState([])
-    // async function getAllCategories()
-    // {
-    //     let {data}=await axios.get(`https://route-ecommerce.onrender.com/api/v1/categories`)
-    //     setCategories(data.data)
-    // }
-    // useEffect(() => {
-    //   getAllCategories() 
-    // }, [])
     var settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         arrows:false
       };
   return (
@@ -28,7 +19,7 @@ export default function CategorySlider() {
     {categoryList.map((item)=>{
         return <div key={item._id}>
         <img src={item.image} className='w-100 img-categorySlider' height={250} alt="" />
-        <h6>{item.name}</h6>
+        <h6 className='mt-2'>{item.name}</h6>
         </div>
     })}
     </Slider>

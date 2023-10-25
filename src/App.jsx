@@ -17,7 +17,10 @@ import jwtDecode from 'jwt-decode';
 import ForgetPass from './Components/ForgetPass/ForgetPass';
 import Resetassword from "./Components/ResetPassword/Resetassword"
 import Notfound from './Components/Notfound/Notfound';
+import BrandProducts from './Components/BrandProducts/BrandProducts';
+import { Offline} from "react-detect-offline";
 function App() {
+  
   const [userData, setUserData] = useState(null)
   function saveUserData()
   {
@@ -41,11 +44,13 @@ function logout()
 }
   useEffect(() => {
     
-  if(localStorage.getItem('token')!==null){
+  if(localStorage.getItem('token')!==null &&userData==null){
     saveUserData()
   }
    
   }, [])
+
+ 
   
   let routes=createHashRouter([{
     path:'',element:<MainLayout userData={userData} logout={logout}/>,
@@ -54,6 +59,7 @@ function logout()
       {  path:'products',element:<ProtectedRoutes><Products/></ProtectedRoutes> },
       {  path:'category',element:<ProtectedRoutes><Categories/></ProtectedRoutes> },
       {  path:'brands',element:<ProtectedRoutes><Brands/></ProtectedRoutes> },
+      {path:"brandProduct/:id",element:<ProtectedRoutes><BrandProducts/></ProtectedRoutes>},
       {   path:'product-details/:id',element:<ProtectedRoutes><ProductDetails/></ProtectedRoutes>},
       {   path:'register',element:<Register/>},
       {   path:'login',element:<Login saveUserData={saveUserData}/>},
@@ -66,13 +72,20 @@ function logout()
     ]
   }])
   return (
-    <div className="App">
+    <>
+  
+ 
+ <Offline> <span className='network-Status'>Only shown offline (surprise!)</span></Offline>
+ 
+<div className="App">
      <ToastContainer theme='colored'/>
      <StoreContextProvider>
      <RouterProvider router={routes}/>
      </StoreContextProvider>
    
     </div>
+    </>
+   
   );
 }
 

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { StoreContext } from '../../Context/StoreContext'
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 export default function Cart () {
   const notify = (msg,type) => toast[type](msg);
@@ -53,6 +54,14 @@ export default function Cart () {
   
   return (
     <>
+
+
+
+<Helmet>
+                <meta charSet="utf-8" />
+                <title>Shop Cart</title>
+            </Helmet>
+
     {cart.products?
    <>
     <div className="container">
